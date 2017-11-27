@@ -1,2 +1,2 @@
 # WeatherTmin
-Weather API from vremetolmin.si.
+Weather API for vremetolmin.si.
