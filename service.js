@@ -19,13 +19,24 @@ function parser(plain_data)
   line_data = lines[19].split(/[|]/);
   line_data_sub = line_data[0].split(' : ');
   line_data_sub = line_data_sub[1].replace(/\s\r/g, '');
+  line_data_sub = line_data_sub.split(' ');
+  line_data_sub = line_data_sub[0];
   responseData['temperature'] = line_data_sub.trim();
   line_data_sub = line_data[1].split(': ');
   line_data_sub = line_data_sub[1].replace(/\s\r/g, '');
+  line_data_sub = line_data_sub.split(' ');
+  line_data_sub = line_data_sub[0];  
   responseData['max'] = line_data_sub.trim();
   line_data_sub = line_data[2].split(': ');
   line_data_sub = line_data_sub[1].replace(/\s\r/g, '');
+  line_data_sub = line_data_sub.split(' ');
+  line_data_sub = line_data_sub[0];  
   responseData['min'] = line_data_sub.trim();
+  line_data_sub = line_data[2].split(': ');
+  line_data_sub = line_data_sub[1].replace(/\s\r/g, '');
+  line_data_sub = line_data_sub.split(' ');
+  line_data_sub = line_data_sub[1];  
+  responseData['unit'] = line_data_sub.trim();
   return JSON.stringify(responseData);
 }
 
