@@ -51,7 +51,6 @@ function getPlainData(req, res) {
   });
 }
 
-
 const client = new Client({
   connectionString: "postgres://otmuhoeudinjzo:5fb84fc3623ae8b44594aea159685a309886ef34928783a0a8f8681de91c792d@ec2-54-247-95-125.eu-west-1.compute.amazonaws.com:5432/d9at58avc7pdv5",
   ssl: true,
@@ -74,27 +73,6 @@ async function getDBData(req, res) {
   } finally {
     //await client.end();  
   }
-
-  // var data = [{}]; 
-  // client.connect();
-  // client.query('SELECT * FROM weather_station;', (err, res) => {
-  //   if (err) throw err;
-  //   for (let row of res.rows) {
-  //     console.log(JSON.stringify(row));
-  //     data['rows'] = JSON.stringify(row); 
-  //   }
-  //   client.end();
-  // });
-  // res.send(data);
-
-  // client.connect();
-  // var response = client.query("SELECT * FROM weather_station ORDER BY id ASC;");
-  // response.rows.forEach(row=>{
-  //     console.log(row);
-  //     data.push(row);
-  // });
-  // client.end();
-  //return res.json(data);
 }
 
 function checkServerError(res, error) {
